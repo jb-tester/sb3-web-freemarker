@@ -17,13 +17,13 @@ public class MyController {
 
     @GetMapping("/")
     public String home(ModelMap model) {
-        model.addAttribute("home_attr1", "home_attr1");
+        model.addAttribute("home_attr1", "hello");
         return "home";
     }
 
     @RequestMapping("/test")
     public String test(ModelMap model) {
-        model.addAttribute("test_attr1", "test_attr1");
+        model.addAttribute("test_attr1", "test");
         return "test";
     }
 }
