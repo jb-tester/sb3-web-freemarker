@@ -3,6 +3,7 @@ package com.mytests.spring.boot3.test;
 import com.mytests.spring.boot3.test.data.namedQueries.ContactsRepo;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,5 +33,14 @@ public class ContactsController {
         model.addAttribute("test_attr2", repo.nativeQwe1("lena").get(0));
         model.addAttribute("test_attr3", repo.query12("ai"));
         return "test"; // no navigation to view
+    }
+
+    @RequestMapping("/greet")
+    public String index(Model model) {
+        model.addAttribute("some_str", "foo");
+        model.addAttribute("some_int", 100);
+        model.addAttribute("some_symbol", 'c');
+        model.addAttribute("some_flag", true);
+        return "hello";
     }
 }

@@ -1,0 +1,1 @@
+str: ${some_str}. int: ${some_int}. char: ${some_symbol}. boolean: ${some_flag}
